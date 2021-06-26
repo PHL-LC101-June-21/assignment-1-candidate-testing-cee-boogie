@@ -10,7 +10,7 @@ let candidateName = "";
 let question = "Who was the first American woman in space?  ";
 let correctAnswer = "Sally Ride";
 let candidateAnswer = "";
-let questions = ["Who was the first American woman in space? ", "True or false: 5 kilometer==5000 meters? ", "(5+3)/2*10=? ", "Given the array [8, 'Orbit', 'Trajectory', 45], what entry is at index 2? ", "What is the minimum crew size for the ISS? "];
+let questions = ["Who was the first American woman in space? ", "True or false: 5 kilometer = 5000 meters? ", "(5 + 3) / 2 * 10 = ? ", "Given the array [8, 'Orbit', 'Trajectory', 45], what entry is at index 2? ", "What is the minimum crew size for the ISS? "];
 let correctAnswers = ["Sally Ride", "true", "40", "Trajectory", "3"];
 let candidateAnswers = [];
 
@@ -35,17 +35,19 @@ function gradeQuiz(candidateAnswers) {
 
   // TODO 1.2c: Let the candidate know if they have answered the question correctly or incorrectly // 
 
-console.log(`Let's compare your answers to the answer key!
+console.log(`Thank you for completing the quiz. Read below to compare your answers to the answer key and view your grade.
+
+Quiz results for: ${candidateName}
 
 Question 1. Who was the first American woman in space?
 Candidate's Answer: ${candidateAnswers[0]}
 Correct Answer:  ${correctAnswers[0]}
 
-Question 2. True or false: 5 kilometer==5000 meters?
+Question 2. True or false: 5 kilometer = 5000 meters?
 Candidate's Answer: ${candidateAnswers[1]}
 Correct Answer:  ${correctAnswers[1]}
 
-Question 3. (5+3)/2*10=?
+Question 3. (5 + 3) / 2 * 10 = ?
 Candidate's Answer: ${candidateAnswers[2]}
 Correct Answer:  ${correctAnswers[2]}
 
@@ -76,13 +78,7 @@ for (i = 0; i < questions.length; i++) {
       quizResult = "Candidate has failed the quiz.";
   }
   
-  console.log(`Candidate's quiz results have been graded. 
-
-  Grade: ${grade} % 
-  ${numberCorrectAnswers} out of 5 questions answered correctly.
-  ${quizResult}
-
-  `)
+  console.log(`Candidate's quiz results have been graded. \nGrade: ${grade}% \n${numberCorrectAnswers} out of 5 questions answered correctly. \n${quizResult}`)
 
   return grade;
 }
@@ -108,4 +104,4 @@ module.exports = {
   candidateAnswers: candidateAnswers,
   gradeQuiz: gradeQuiz,
   runProgram: runProgram
-}
+};
